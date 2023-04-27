@@ -5,12 +5,14 @@ import { PresentationRoutingModule } from "./presentation-routing.module";
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ListComponent
   ],
   imports: [CoreModule, DataModule, PresentationRoutingModule],
   exports: [
