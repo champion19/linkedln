@@ -9,9 +9,9 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path:'/lista',
-    component:ListComponent
-  }
+    path: 'list',
+    component: ListComponent
+  },
 ];
 
 @NgModule({
