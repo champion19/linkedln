@@ -7,12 +7,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListComponent } from './list/list.component';
 
+
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    ListComponent
+    ListComponent,
+
   ],
   imports: [CoreModule, DataModule, PresentationRoutingModule],
   exports: [
