@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListComponent } from './list/list.component';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ListComponent } from './list/list.component';
     HeaderComponent,
     FooterComponent,
     ListComponent,
+    DetailsComponent,
 
   ],
   imports: [CoreModule, DataModule, PresentationRoutingModule],
