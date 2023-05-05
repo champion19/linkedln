@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
+import { CommonModule } from "@angular/common";
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { DetailsComponent } from './details/details.component';
     DetailsComponent,
 
   ],
-  imports: [CoreModule, DataModule, PresentationRoutingModule],
+  imports: [CommonModule, CoreModule, DataModule, PresentationRoutingModule],
   exports: [
     HeaderComponent,
     FooterComponent
