@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { CommonModule } from "@angular/common";
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { CommonModule } from "@angular/common";
     FooterComponent,
     ListComponent,
     DetailsComponent,
-
+    LoginComponent,
   ],
   imports: [CommonModule, CoreModule, DataModule, PresentationRoutingModule],
   exports: [
