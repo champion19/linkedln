@@ -9,6 +9,7 @@ import { ListComponent } from './offers/list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { CommonModule } from "@angular/common";
 import { LoginComponent } from './auth/login/login.component';
+import { OffersModule } from "./offers/offers.module";
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { LoginComponent } from './auth/login/login.component';
     DetailsComponent,
     LoginComponent,
   ],
-  imports: [CommonModule, CoreModule, DataModule, PresentationRoutingModule],
+  imports: [CommonModule, CoreModule, DataModule, PresentationRoutingModule, OffersModule],
   exports: [
     HeaderComponent,
     FooterComponent

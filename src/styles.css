@@ -2,3 +2,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+
+* {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+@media (min-width: 0px) and (max-width: 1024px) {
+  .app-container {
+    max-width: 100% !important;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
+/* media queryes para laptops o pantallas grandes */
+@media (min-width: 1024px) {
+  .app-container {
+    width: 100%;
+    max-width: 1292px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}

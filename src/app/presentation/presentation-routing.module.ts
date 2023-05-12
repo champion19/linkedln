@@ -1,3 +1,4 @@
+import { MainOffersComponent } from './offers/main-offers/main-offers.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -12,12 +13,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path:'login',
-    loadChildren:()=>import('./auth/login/login.component').then((module)=>module.LoginComponent),
+    path:'auth',
+    loadChildren:()=>import('./auth/auth.module').then((module)=>module.AuthModule),
   },
   {
     path: 'offers',
-    loadChildren:()=>import('./offers/list/list.component').then((module)=>module.ListComponent),
+    loadChildren:()=>import('./offers/offers.module').then((module)=>module.OffersModule),
   },
   {
     path:"details",

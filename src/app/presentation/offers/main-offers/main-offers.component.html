@@ -1,0 +1,46 @@
+<div class="app-container">
+  <h2 class="text-lg">
+    <i class=" pt-10 fa-sharp fa-solid fa-star"></i> Nuestras mejores ofertas
+  </h2>
+  <div class="flex flex-col" *ngFor="let item of listOffers">
+    <div class="el-card is-hover-shadow mb-4 cursor-pointer relative card-validation" aria-disabled="false">
+      <!--v-if-->
+      <div class="el-card__body">
+        <div class="flex justify-between">
+          <div class="flex text-[10px] text-left -mt-2"><span
+              class="el-tag el-tag--light is-round font-roboto font-normal text-[13px] -ml-1 font-bold text-black"
+              id="tagListOffers"><span class="el-tag__content">En Revision</span><!--v-if--></span>
+            <div class="font-roboto font-normal text-[12px] text-[#4E717A] mt-[1px]"><span
+                class="ml-1 opacity-50">Enviada
+                a revisión: 2023-05-11 - 11:45</span><span class="ml-1 font-bold"></span></div>
+          </div>
+          <div class="flex -mt-4 -mr-4">
+            <div
+              class="rounded-full w-8 h-8 flex justify-center items-center text-black cursor-pointer hover:bg-[#E5EFEA] border-none el-tooltip__trigger el-tooltip__trigger">
+              <i class="fas fa-solid fa-ellipsis-vertical text-[18px] text-[#095669]" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div><a href="/ver-oferta" class="">
+          <div class="flex justify-between pr-1 pb-3 pt-4">
+            <div class="w-full font-red-hat font-bold text-[16px] text-[#095669] leading-5 break-normal">{{item.title}}
+            </div>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex flex-wrap text-[#095669] font-roboto text-[14px] opacity-70">
+              <div><i class="mr-[0.2rem] fa-solid fa-circle-dollar"></i><span class="font-normal">{{item.money}}</span>
+              </div>
+              <div class="ml-[1.5rem]"><i class="mr-[0.2rem] fa-sharp fa-solid fa-location-dot"></i><span
+                  class="font-normal">{{item.location}}</span></div>
+            </div>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex text-[#095669] font-roboto text-[14px] opacity-70 mt-1">
+              <div><i class="mr-[0.2rem] fa-solid fa-briefcase"></i><span class="font-normal">{{item.modality}}</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
