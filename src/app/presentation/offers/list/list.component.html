@@ -1,0 +1,54 @@
+<section class="flex flex-col justify-center items-center p-5 py-6 bg-[#FAF6EF] mt-16">
+  <div class="vin-container w-full text-[#033541] font-red-hat text-center md:text-left">
+    <div class="lg:flex lg:justify-between md:justify-between md:items-center mb-1">
+      <div class="mt-2">
+        <div class="vincu-over-title">Mis ofertas</div>
+        <b class="vincu-title">Crea y revisa tus ofertas</b>
+      </div>
+      <div class="mt-5">
+        <button
+          class="inline-block rounded bg-neutral-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] transition duration-150 ease-in-out hover:bg-neutral-800 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-neutral-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] dark:bg-neutral-900 dark:shadow-[0_4px_9px_-4px_#030202] dark:hover:bg-neutral-900 dark:hover:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:focus:bg-neutral-900 dark:focus:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:active:bg-neutral-900 dark:active:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)]"
+          typ="button">
+          <span class=""> Crear nueva oferta </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="flex flex-col justify-center items-center pb-10">
+  <section class="w-9/12 flex-col bg-slate-200 mt-2 rounded-lg" *ngFor="let item of listOffers">
+    <section class="p-2">
+      <div class="flex justify-between">
+        <div class="flex font-normal text-[13px] font-bold text-black">
+          <div class="el-tag__content">{{item.status}}</div>
+          <div class="font-roboto font-normal text-[12px] text-[#4E717A] mt-[1px] ml"><span
+              class="ml-1 opacity-50">{{item.date_status}}</span><span class="ml-1 font-bold"></span></div>
+        </div>
+        <div
+          class="rounded-full w-8 h-8 flex justify-center items-center text-black cursor-pointer hover:bg-[#E5EFEA] border-none el-tooltip__trigger el-tooltip__trigger">
+          <i class="fas fa-solid fa-ellipsis-vertical text-[18px] text-[#095669]" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="flex justify-between pt-3 pb-3">
+        <div class="w-full font-red-hat font-bold text-[16px] text-[#095669] leading-5 break-normal">{{item.title}}
+        </div>
+      </div>
+      <div class="flex justify-between">
+        <div class="flex flex-wrap text-[#095669] font-roboto text-[14px] opacity-70">
+          <div>
+            <i class="mr-[0.2rem] fa-solid fa-circle-dollar"></i>
+            <span class="font-normal ml-2">{{item.money}}</span>
+          </div>
+          <div class="ml-[1.5rem]">
+            <i class="mr-[0.2rem] fa-sharp fa-solid fa-location-dot"></i>
+            <span class="font-normal ml-2">{{item.location}}</span>
+          </div>
+          <div class="ml-[1.5rem]">
+            <i class="mr-[0.2rem] fa-solid fa-briefcase"></i>
+            <span class="font-normal ml-2">{{item.modality}}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</section>

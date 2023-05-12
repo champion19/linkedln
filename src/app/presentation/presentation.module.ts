@@ -5,11 +5,11 @@ import { PresentationRoutingModule } from "./presentation-routing.module";
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ListComponent } from './list/list.component';
+import { ListComponent } from './offers/list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { CommonModule } from "@angular/common";
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './auth/login/login.component';
+import { OffersModule } from "./offers/offers.module";
 
 
 @NgModule({
@@ -20,9 +20,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ListComponent,
     DetailsComponent,
     LoginComponent,
-    DashboardComponent,
   ],
-  imports: [CommonModule, CoreModule, DataModule, PresentationRoutingModule],
+  imports: [CommonModule, CoreModule, DataModule, PresentationRoutingModule, OffersModule],
   exports: [
     HeaderComponent,
     FooterComponent
