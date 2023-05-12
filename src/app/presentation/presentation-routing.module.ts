@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren:()=>import('./auth/login/login.component').then((module)=>module.LoginComponent),
   },
   {
-    path: 'list',
+    path: 'offers',
     loadChildren:()=>import('./offers/list/list.component').then((module)=>module.ListComponent),
   },
   {
