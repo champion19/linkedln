@@ -11,7 +11,7 @@
         <p class="mb-4">
           Crea tu cuenta.Es facil y rapido.
         </p>
-        <form action="#">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
           <div class="grid grid-cols-2 gap-5">
              <input type="text" placeholder="Nombre" class="border border-gray-400 py-1 px-2">
              <input type="text" placeholder="Apellido" class="border border-gray-400 py-1 px-2">
