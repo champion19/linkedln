@@ -10,6 +10,7 @@ import { DetailsComponent } from './details/details.component';
 import { CommonModule } from "@angular/common";
 import { LoginComponent } from './auth/login/login.component';
 import { OffersModule } from "./offers/offers.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { OffersModule } from "./offers/offers.module";
     DetailsComponent,
     LoginComponent,
   ],
-  imports: [CommonModule, CoreModule, DataModule, PresentationRoutingModule, OffersModule],
+    imports: [CommonModule, CoreModule, DataModule, PresentationRoutingModule, OffersModule, ReactiveFormsModule],
   exports: [
     HeaderComponent,
     FooterComponent
