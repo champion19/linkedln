@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,7 +14,8 @@ import { DashboardHomeComponent } from './dashboard-home/dashboard-home.componen
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    HttpClientModule
   ]
 })
 export class DashboardModule { }

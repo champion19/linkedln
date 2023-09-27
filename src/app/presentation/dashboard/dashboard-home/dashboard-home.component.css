@@ -1,104 +1,45 @@
-/* Only the scroll bar
-::-webkit-scrollbar {
-  width: .5rem;
-  height: .5rem;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, .15);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, .3);
-}
-*/
-
-
 .content {
   background-color: gray;
-  width: 1005px;
-  height: auto;
+  width: 70%;
   border-radius: 1rem;
 }
-  .content-timer {
-    display: flex;
-    justify-content: center;
-    padding-top: 2rem;
-  }
-    .content-h,
-    .content-m,
-    .content-s {
-      width: 110rem;
-      height: 10rem;
-      /* background-color: rgb(51, 12, 87); */
-    }
-      .time {
-        font-size: 130px;
-        text-align: center;
-        font-weight: 300;
-        color: white;
-      }
 
-        span {
-          font-size: 2rem;
-          font-weight: 300;
-          color:white;
+.content-timer {
+  display: flex;
+  justify-content: center;
+}
 
-        }
+.content-h,
+.content-m,
+.content-s {
+  width: 100%;
+}
 
+.time {
+  font-size: 110px;
+  text-align: center;
+  font-weight: 300;
+  color: white;
+}
 
-    .content-btn {
-      /* background-color: blueviolet; */
-      text-align: center;
-    }
-      .button {
-        font-size: 4rem;
-        width: 6rem;
-        margin: 0 30px;
-        border-radius: 10px;
-        border: none;
-        outline: inherit;
-        background: black;
-        color:white;
+span {
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
 
-      }
+}
 
-      .hover {
-        background: lightgray;
-        transition: 0.6s;
-        transform: scale(0.8);
-        cursor: pointer;
-      }
+.content-btn {
+  text-align: center;
+  font-size: 1.7rem;
+}
 
-  .content-btn-action {
-    display: flex;
-    justify-content: center;
-    margin-top: 5rem;
-    padding-bottom: 3rem;
-  }
-
-     .button {
-      font-size: 5rem;
-      width: 6rem;
-      margin: 0 30px;
-      border-radius: 20px;
-      border: none;
-      outline: inherit;
-      color:red;
-     }
-
-      .hover {
-        background-color: white;
-        transition: 0.6s;
-        transform: scale(0.8);
-        cursor: pointer;
-      }
-
-      .disabled {
-        opacity: 0.3;
-      }
-
-
+.content-btn-action {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
 
 .move {
   animation: move_timer 1.3s infinite;
