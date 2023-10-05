@@ -130,7 +130,6 @@ item: any;
   }
 
   start() {
-    console.log('Hola mundo');
     if (this.hours > 0 || this.minutes > 0 || this.seconds > 0) {
 
       this.disabled = true;
