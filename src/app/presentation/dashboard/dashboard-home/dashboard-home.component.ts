@@ -37,18 +37,19 @@ export class DashboardHomeComponent {
       status: false
     },
     {
-      id: 4,
-      title: 'Encender Bombilla # 4',
+      id: 5,
+      title: 'Abrir / Cerrar Puerta',
       identify: 'Four',
       status: false
     },
     {
-      id: 5,
-      title: 'Abrir / Cerrar Puerta',
-      identify: 'Five',
-      status: false
-    },
+      id:6,
+      title:'Temperatura',
+      identify:"Five",
+      status:false
+    }
   ]
+item: any;
 
   constructor(private http: HttpClient) { }
 
@@ -56,9 +57,10 @@ export class DashboardHomeComponent {
 
   sendLightOn(light: number) {
     this.foundLight(light,true);
-    const url = environment.config.apiUrl
+    const url = /*environment.config.apiUrl*/"http://192.168.0.195:5000/cambio"
     const data = {
-      key1: true
+      //key1: true
+
     }
     const response = this.http.post(environment.config.apiUrl, data);
     //const response = this.http.get(environment.config.apiUrl.concat(environment.config.timezone)).subscribe((res) => console.log(res));
@@ -75,7 +77,7 @@ export class DashboardHomeComponent {
       foundLight.status = action;
     }
   }
-  //reloj 
+  //reloj
   increment(type: 'H' | 'M' | 'S') {
     if (type === 'H') {
       if (this.hours >= 99) return;
@@ -128,6 +130,7 @@ export class DashboardHomeComponent {
   }
 
   start() {
+    console.log('Hola mundo');
     if (this.hours > 0 || this.minutes > 0 || this.seconds > 0) {
 
       this.disabled = true;
