@@ -67,7 +67,7 @@ item: any;
 
   sendLightOn(light: number) {
     this.foundLight(light,true);
-    const url = environment.config.apiUrl.concat('/cambio');
+    const url = environment.config.apiUrl.concat('/usuario');
     const data = {
       id: light
     }
