@@ -16,37 +16,47 @@ export class DashboardHomeComponent {
   public show: boolean = true;
   public disabled: boolean = false;
   public animate: boolean = false;
+  public showTimer: boolean = false;
+  public textTimer: string = '';
+  public timeTimer: number = 30;
+  public temperature: number = 28;
+  public showTemperature: boolean = false;
 
   public lights = [
     {
       id: 1,
       title: 'Encender Bombilla # 1',
       identify: 'One',
-      status: false
+      status: false,
+      type: 'light'
     },
     {
       id: 2,
       title: 'Encender Bombilla # 2',
       identify: 'Two',
-      status: false
+      status: false,
+      type: 'light'
     },
     {
       id: 3,
       title: 'Encender Bombilla # 3',
       identify: 'Three',
-      status: false
+      status: false,
+      type: 'light'
     },
     {
       id: 5,
       title: 'Abrir / Cerrar Puerta',
       identify: 'Four',
-      status: false
+      status: false,
+      type: 'door'
     },
     {
       id:6,
       title:'Temperatura',
       identify:"Five",
-      status:false
+      status:false,
+      type: 'temperature'
     }
   ]
 item: any;
@@ -57,18 +67,56 @@ item: any;
 
   sendLightOn(light: number) {
     this.foundLight(light,true);
-    const url = /*environment.config.apiUrl*/"http://192.168.0.195:5000/cambio"
+    const url = environment.config.apiUrl.concat('/cambio');
     const data = {
-      //key1: true
-
+      id: light
     }
-    const response = this.http.post(environment.config.apiUrl, data);
-    //const response = this.http.get(environment.config.apiUrl.concat(environment.config.timezone)).subscribe((res) => console.log(res));
+    const response = this.http.post(url, data);
     console.log(response);
   }
 
   sendLightOff(light: number) {
     this.foundLight(light,false);
+  }
+
+  sendOpenDoor(id: number) {
+    this.foundLight(id,true);
+    this.timerOpenDoor(id,'Tiempo restante para cerrar la puerta', 10);
+  }
+
+  sendCloseDoor(id: number) {
+    this.foundLight(id,false);
+    this.closeDoor(id);
+  }
+
+  timerOpenDoor(id: number,text:string, timer: number = 30) {
+    this.textTimer = text;
+    this.showTimer = true;
+    if(timer){this.timeTimer = timer;}
+    const interval = setInterval(() => {
+      if (this.timeTimer > 0) {
+        this.timeTimer--;
+      } else {
+        this.closeDoor(id);
+        clearInterval(interval);
+      }
+    }, 1000);
+  }
+
+  closeDoor(id: number){
+    this.showTimer = false;
+    this.foundLight(id,false);
+    try{
+      const url = environment.config.apiUrl.concat('/cambio');
+      const data = {
+        id: id
+      }
+      const response = this.http.post(url,data).subscribe((res) => {
+        this.showTimer = false;
+        this.foundLight(id,false);});
+    } catch(error){
+      console.log('Sucedio un errror a nivel de la aplicación', error);
+    }
   }
 
   foundLight(light:number, action: boolean){
@@ -77,8 +125,24 @@ item: any;
       foundLight.status = action;
     }
   }
-  //reloj
-  increment(type: 'H' | 'M' | 'S') {
+
+  async getTemperature(id: number){
+    try{
+      const url = environment.config.apiUrl.concat('/temperatura');
+      await this.http.get(url).subscribe((res) => console.log(res));
+      this.foundLight(id,false);
+      this.showTemperature = true;
+    } catch(error){
+      console.log('Sucedio un errror a nivel de la aplicación', error);
+    }
+  }
+
+  getHiddeTemperature(id:number){
+    this.foundLight(id,false);
+    this.showTemperature = false;
+  }
+
+  /*increment(type: 'H' | 'M' | 'S') {
     if (type === 'H') {
       if (this.hours >= 99) return;
       this.hours += 1;
@@ -157,7 +221,7 @@ item: any;
     this.minutes = 0;
     this.seconds = 0;
     this.stop();
-  }
+  }*/
 }
 
 

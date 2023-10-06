@@ -4,10 +4,37 @@
       <span class="mt-2 text-black">{{item.title}}</span>
     </div>
     <button class="bg-black px-5 py-5 mt-5 text-l uppercase font-bold tracking-widest rounded-xl"
+    *ngIf="item.type == 'light'"
       [ngClass]="item.status ? 'bg-green-300 text-black' : 'bg-black text-white' "
       (click)="item.status ? sendLightOff(item.id) : sendLightOn(item.id)">{{item.status ? 'Encendido' : 'Apagado'}}</button>
+      <button class="bg-black px-5 py-5 mt-5 text-l uppercase font-bold tracking-widest rounded-xl"
+      *ngIf="item.type == 'door'"
+        [ngClass]="item.status ? 'bg-green-300 text-black' : 'bg-black text-white' "
+        (click)="item.status ? sendCloseDoor(item.id) : sendOpenDoor(item.id)">{{item.status ? 'Encendido' : 'Apagado'}}</button>
+        <button class="bg-black px-5 py-5 mt-5 text-l uppercase font-bold tracking-widest rounded-xl"
+        *ngIf="item.type == 'temperature'"
+          [ngClass]="item.status ? 'bg-green-300 text-black' : 'bg-black text-white' "
+          (click)="item.status ? getHiddeTemperature(item.id) : getTemperature(item.id)">{{item.status ? 'Encendido' : 'Apagado'}}</button>
   </div>
 </section>
+
+<section class="mt-5 mb-28" *ngIf="showTimer">
+<div class="block justify-center items-center bg-gray-200 rounded-2xl w-48 text-center m-auto">
+  <h3 class="text-red-400 font-bold">{{textTimer}}</h3>
+  <p class="text-black">{{ timeTimer }} segundos</p>
+</div>
+</section>
+
+<section *ngIf="showTemperature" class="py-10 mb-20">
+  <div  class="bg-green-400 block w-96 p-2 w-70 m-auto rounded-md">
+    <p><strong>La temperatura actual es :</strong> {{ temperature }}°C</p>
+  </div>
+</section>
+
+<button class="fixed w-20 h-20 rounded-full bg-blue-200 right-4 bottom-36 shadow-lg"
+(click)="modalRef.openModal()">
+  <i class="fa-solid fa-clock text-white text-4xl"></i>
+</button>
 
 <!--<section class="flex justify-center align-items-center mt-2 mb-20" id="timer">
   <div class="content" [class.move]="animate">
@@ -42,3 +69,4 @@
   </div>
 </section>-->
 <app-hora></app-hora>
+<app-modal #modalRef></app-modal>

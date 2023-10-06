@@ -12,8 +12,6 @@ import { LoginComponent } from './auth/login/login.component';
 import { OffersModule } from "./offers/offers.module";
 import {ReactiveFormsModule} from "@angular/forms";
 
-
-
 @NgModule({
   declarations: [
     HomeComponent,
@@ -22,12 +20,11 @@ import {ReactiveFormsModule} from "@angular/forms";
     ListComponent,
     DetailsComponent,
     LoginComponent,
-  
-  ],
-    imports: [CommonModule, CoreModule, DataModule, PresentationRoutingModule, OffersModule, ReactiveFormsModule],
+],
+  imports: [CommonModule, CoreModule, DataModule, PresentationRoutingModule, OffersModule, ReactiveFormsModule],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ]
 })
 export class PresentationModule{}
