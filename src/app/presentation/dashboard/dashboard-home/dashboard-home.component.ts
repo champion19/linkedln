@@ -107,7 +107,7 @@ item: any;
     this.showTimer = false;
     this.foundLight(id,false);
     try{
-      const url = environment.config.apiUrl.concat('/cambio');
+      const url = environment.config.apiUrl.concat('/usuario');
       const data = {
         id: id
       }
@@ -125,6 +125,7 @@ item: any;
       foundLight.status = action;
     }
   }
+  //buscar su direccion ip en postman para probar probones, post a mi mismo, lo que se vea en console,se  vea en postman
 
   async getTemperature(id: number){
     try{
